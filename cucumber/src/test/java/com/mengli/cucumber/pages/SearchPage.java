@@ -9,10 +9,14 @@ import org.openqa.selenium.support.How;
  */
 public class SearchPage {
 
-    @FindBy(how = How.CSS,using = "#kw")
+    @FindBy(how = How.NAME,using = "wd")
     private WebElement searchInput;
 
     public WebElement getSearchInput() {
         return searchInput;
+    }
+
+    public void setSearchInput(WebElement searchInput) {
+        this.searchInput = searchInput;
     }
 }

@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,11 +23,16 @@ public class SearchSteps {
     WebElement searchInputField;
     SearchPage searchPage=new SearchPage();
 
+    public SearchSteps(){
+        driver=new FirefoxDriver();
+        this.driver.manage().window().maximize();
+        driver.get("http://www.baidu.com");
+        PageFactory.initElements(this.driver, searchPage);
+    }
+
     @Given("^The search is Hello World$")
     public void The_search_is_Hello_World(){
-        driver=new FirefoxDriver();
-        driver.get("www.baidu.com");
-        searchInputField= searchPage.getSearchInput(); //driver.findElement(By.cssSelector("#kw"));
+        searchInputField= searchPage.getSearchInput();
         searchInputField.sendKeys("Hello World");
     }
 
