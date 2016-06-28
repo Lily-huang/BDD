@@ -1,0 +1,6 @@
+issue:
+1.gradle can not find the tests and throw error at first, after run it with maven, fixed.
+2.when add the cucumberOptions 'strict = false,monochrome = true,dryRun=true', my tests are always ignored.
+
+To do:
+1.when I give mutiple objects, I can't recognise which object I should use as there's always get all objects in the list.
