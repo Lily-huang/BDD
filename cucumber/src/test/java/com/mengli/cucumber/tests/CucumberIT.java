@@ -10,9 +10,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty"},
-        features = {"classpath:*/Hello.feature"},
+        plugin = {"pretty",},
+//        strict = false,monochrome = true,dryRun=true,
+        features = {"classpath:com/test/feature"},
         glue = {"com.mengli.cucumber"}
 )
-public class RunSearchTest {
+public class CucumberIT {
 }

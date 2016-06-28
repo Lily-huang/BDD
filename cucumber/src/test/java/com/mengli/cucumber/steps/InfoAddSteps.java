@@ -2,9 +2,11 @@ package com.mengli.cucumber.steps;
 
 import com.mengli.cucumber.model.Staff;
 import com.mengli.cucumber.pages.InfoAddPage;
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import gherkin.formatter.model.DataTableRow;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -26,6 +28,7 @@ public class InfoAddSteps {
     WebElement ageInputField;
     WebElement idInputField;
     InfoAddPage infoAddPage=new InfoAddPage();
+    Staff staff;
 
     public InfoAddSteps(){
         driver=new FirefoxDriver();
@@ -36,8 +39,10 @@ public class InfoAddSteps {
 
     @Given("^the following staffs info$")
     public void the_following_staffs_info(List<Staff> staffs){
-        System.out.println("*****"+ staffs.get(0).getName());
+//        System.out.println("*****"+ staffs.getGherkinRows());
+//        System.out.println("*****"+ staffs.get(1).getName());
         Staff staff=staffs.get(0);
+
         nameInputField=infoAddPage.getNameInput();
         nameInputField.sendKeys(staff.getName());
         ageInputField=infoAddPage.getAgeInput();
