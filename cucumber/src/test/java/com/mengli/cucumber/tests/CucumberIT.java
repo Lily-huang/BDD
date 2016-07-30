@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty",},
 //        strict = false,monochrome = true,dryRun=true,
         features = {"classpath:com/test/feature"},
-        glue = {"com.mengli.cucumber"}
+        glue = {"com.mengli.cucumber.steps"}
 )
 public class CucumberIT {
 }
